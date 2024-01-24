@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://5bjpbq8cirud"]
+
+[node name="Np-basicGround" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
