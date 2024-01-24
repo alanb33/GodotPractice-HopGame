@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cabx3ba2fqug4"]
+
+[ext_resource type="Script" path="res://Scenes/Entity/Player/Player.gd" id="1_faqxg"]
+[ext_resource type="Texture2D" uid="uid://bvv7efy6i11ou" path="res://icon.svg" id="1_gqgbv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j551"]
+size = Vector2(64, 64)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 1794
+floor_block_on_wall = false
+platform_floor_layers = 4294966271
+platform_wall_layers = 1024
+script = ExtResource("1_faqxg")
+
+[node name="Icon" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_gqgbv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1j551")

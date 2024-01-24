@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp73ooy0mwuco"]
+
+[ext_resource type="Script" path="res://Scenes/Terrain/NP-BasicClimbable.gd" id="1_w6kgf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mh71b"]
+size = Vector2(100, 100)
+
+[node name="Np-basicClimbable" type="Area2D"]
+collision_layer = 1024
+script = ExtResource("1_w6kgf")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 1, 0, 1)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_mh71b")
