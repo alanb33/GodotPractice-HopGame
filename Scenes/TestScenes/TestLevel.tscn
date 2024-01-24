@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnswlnq1gr6vp"]
+
+[ext_resource type="PackedScene" uid="uid://5bjpbq8cirud" path="res://Scenes/Terrain/NP-BasicGround.tscn" id="1_x3c4w"]
+[ext_resource type="PackedScene" uid="uid://cabx3ba2fqug4" path="res://Scenes/Entity/Player/Player.tscn" id="2_4setb"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Np-basicGround" parent="." instance=ExtResource("1_x3c4w")]
+position = Vector2(97, 550)
+scale = Vector2(10, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_4setb")]
+position = Vector2(604, 159)
