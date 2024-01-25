@@ -9,6 +9,9 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 ### Public Methods ###
 
+func get_size() -> Vector2:
+	return $CollisionShape2D.shape.size
+
 func set_climbable(mode: bool) -> void:
 	self._climbable = mode
 	if _climbing and mode == false:
@@ -27,6 +30,12 @@ func _handle_climbing(delta: float) -> void:
 		if _climbing:
 			position.y -= SPEED * delta
 			velocity.y = 0
+			
+func _handle_descending(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_down"):
+		set_collision_mask_value(10, false)
+	if Input.is_action_just_released("ui_down"):
+		set_collision_mask_value(10, true)
 
 ### Godot Methods ###
 
@@ -35,6 +44,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	_handle_climbing(delta)
+	_handle_descending(delta)
 		
 	# Add the gravity.
 	if not is_on_floor() and not _climbing:
